@@ -6,13 +6,13 @@
 /*   By: ajakob <ajakob@student.42heilbronn.de>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/20 20:55:11 by ajakob            #+#    #+#             */
-/*   Updated: 2022/11/30 15:06:45 by ajakob           ###   ########.fr       */
+/*   Updated: 2023/05/20 00:37:18 by ajakob           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-static size_t	strnlen(const char *s, size_t n)
+static size_t	ft_strnlen(const char *s, size_t n)
 {
 	size_t	i;
 
@@ -31,7 +31,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		return (NULL);
 	srclen = ft_strlen(s);
 	if (srclen > start)
-		len = strnlen(&s[start], len);
+		len = ft_strnlen(&s[start], len);
 	else
 		return (ft_strdup(""));
 	str = (char *)malloc(sizeof(char) * (len + 1));
