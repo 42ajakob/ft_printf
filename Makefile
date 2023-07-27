@@ -6,7 +6,7 @@
 #    By: ajakob <ajakob@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 21:33:02 by ajakob            #+#    #+#              #
-#    Updated: 2023/06/03 02:46:37 by ajakob           ###   ########.fr        #
+#    Updated: 2023/07/27 16:01:31 by ajakob           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -54,7 +54,7 @@ OBJS = 	ft_atoi.o \
 
 all: $(NAME)
 
-$(NAME):
+$(NAME): $(OBJS)
 	@$(CC) -c -Wall -Wextra -Werror $(SRCS)
 	@$(AR) rc $(NAME) $(OBJS)
 
