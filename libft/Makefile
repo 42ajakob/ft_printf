@@ -6,20 +6,22 @@
 #    By: ajakob <ajakob@student.42heilbronn.de>     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/10/19 21:33:02 by ajakob            #+#    #+#              #
-#    Updated: 2023/07/27 16:01:41 by ajakob           ###   ########.fr        #
+#    Updated: 2023/08/09 14:17:08 by ajakob           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	= libft.a
 
-SRCS	= $(shell find . -name "*.c")
+CFLAGS = -c -Wall -Wextra -Werror
+
+SRCS	= $(shell find ./ -maxdepth 1 -iname "*.c")
 OBJS	= ${SRCS:.c=.o}
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@$(CC) -c -Wall -Wextra -Werror $(SRCS)
-	@$(AR) rc $(NAME) $(OBJS)
+	@$(CC) $(CFLAGS) $(SRCS)
+	@$(AR) -rcs $(NAME) $(OBJS)
 
 clean:
 	@rm -f $(OBJS)
